@@ -43,7 +43,7 @@ def send_latest_weather():
 
 with DAG('send_weather_telegram',
          default_args=default_args,
-         schedule_interval='*/6 * * * *',  # every 10 minutes
+         schedule_interval='* * * * *',  # every minute
          catchup=False) as dag:
 
     send_telegram = PythonOperator(

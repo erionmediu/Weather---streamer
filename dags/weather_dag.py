@@ -39,7 +39,7 @@ def stream_data():
 
 with DAG('automatic_pull',
          default_args=default_args,
-         schedule_interval='*/6 * * * *',  # every 6 minute
+         schedule_interval='* * * * *',  # every minute
          catchup=False) as dag:
     
     streaming_task = PythonOperator(
