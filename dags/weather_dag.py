@@ -6,7 +6,7 @@ import requests
 from kafka import KafkaProducer
 
 default_args = {
-    'owner' : 'Erion Mediu',
+    'owner' : 'Erion',
     'start_date' : datetime(2025, 3, 20, 10 , 00)
 }
 
@@ -39,7 +39,7 @@ def stream_data():
 
 with DAG('automatic_pull',
          default_args=default_args,
-         schedule_interval='*/6 * * * *',  # every minute
+         schedule_interval='*/6 * * * *',  # every 6 minute
          catchup=False) as dag:
     
     streaming_task = PythonOperator(

@@ -8,7 +8,7 @@ This project streams weather data every 15 minutes via Kafka and sends updates t
 
 ### 1. Clone the repository
 
-git clone https://github.com/erionmediu/Weather-straming.git
+git clone https://github.com/erionmediu/Weather---streamer
 cd weather-stream
 
 
@@ -18,19 +18,7 @@ python -m venv venv
 source venv/bin/activate        # or .\venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
-
-### 3. Start the entire stack
-docker compose up --build
-
-
-### 4. Access the Airflow UI
-
-    Open browser: http://localhost:8080
-
-    Login: admin / admin
-
-
-### 5. Expected Folder Structure
+### 3. Expected Folder Structure pre build
     weather-stream/
     ├── dags/
     │   ├── weather_dag.py
@@ -39,8 +27,7 @@ docker compose up --build
     ├── requirements.txt
     └── README.md
 
-
-### 6. 💬 Telegram Setup
+### 5. 💬 Telegram Setup
 
     Create a bot via BotFather
 
@@ -51,7 +38,41 @@ docker compose up --build
     Get your chat ID by calling:
     https://api.telegram.org/bot<your_token>/getUpdates
 
+### 6. Weather API set up
+
+    Get a free api at https://www.weatherapi.com/
+    Update "mykey" at weather_dag.py
+
+
+### 6. Start the entire stack
+docker compose up --build
+
+
+### 7. Access the Airflow UI
+
+    Open browser: http://localhost:8080
+
+    Login: admin / admin
+
+
+
+#### Airflow UI :
+
+![alt text](assets/image.png)
+
+#### Docker logs :
+
+![alt text](assets/image2.png)
+
+#### Telegram bot posting reponse :
+
+![alt text](assets/image3.png)
+
+
 ```bash
+
+
+
 
 
 
